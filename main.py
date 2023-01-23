@@ -12,7 +12,7 @@ def builds_tfvars_for_SCA():
         print(f"Error: {response.status_code}")
 
     base_networking = input("Do you want to build a project with Base Networking Resources? Type yes or no: ")
-    if base_networking not in ["yes","no"]:
+    if base_networking not in ["yes", "no"]:
         print("Invalid input for base_networking, stopping builder...")
         return
     else:
@@ -41,7 +41,10 @@ def builds_tfvars_for_SCA():
         print("The fields project_type, waf_log_type and ip_block must be integers \n")
     return {"base_networking": base_networking, "project_type": project_type, "waf_log_type": waf_log_type, "ip_block": ip_block}
 
+
 result = builds_tfvars_for_SCA()
+
+
 if result:
     print(result["base_networking"])
     print(result["project_type"])
