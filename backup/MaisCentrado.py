@@ -1,6 +1,7 @@
 import requests
-def builds_tfvars_for_SCA (base_networking, project_type, waf_log_type, ip_block):
-    path_to_download_in_repo = "https://api.github.com/repos/7clouds-serverless-solutions/sca-tf-templates/contents/tfvars_templates"
+def builds_tfvars_for_sca(base_networking, project_type, waf_log_type, ip_block):
+    path_to_download_in_repo = "https://api.github.com/repos/7clouds-serverless-solutions/sca-tf-templates/contents" \
+                               "/tfvars_templates"
     response = requests.get(path_to_download_in_repo)
 
     if response.status_code == 200:
@@ -42,4 +43,5 @@ def builds_tfvars_for_SCA (base_networking, project_type, waf_log_type, ip_block
                 else:
                     path_to_download_in_repo += "/WAFCentralizedLogsNoIPBlock"
 
-builds_tfvars_for_SCA (base_networking=True, project_type=1, waf_log_type=1, ip_block=True)
+
+builds_tfvars_for_sca(base_networking=True, project_type=1, waf_log_type=1, ip_block=True)
