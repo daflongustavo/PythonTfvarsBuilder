@@ -1,28 +1,28 @@
-def resolves_project_type_1(path_to_download_in_repo, waf_log_type, ip_block):
-    path_to_download_in_repo += "/LambdaAPIGateway"
+def resolves_project_type(repo_download_path, waf_log_type, ip_block):
     if waf_log_type == 1:
-        path_to_download_in_repo += "/NoWAFCentralizedLogs"
+        repo_download_path += "/NoWAFCentralizedLogs"
     if waf_log_type == 2:
-        path_to_download_in_repo += "/NoWAFCloudWatchLogs"
+        repo_download_path += "/NoWAFCloudWatchLogs"
     if waf_log_type == 3:
-        path_to_download_in_repo += "/NoWAFNoLogs"
+        repo_download_path += "/NoWAFNoLogs"
     if waf_log_type == 4:
-        path_to_download_in_repo += "/WAFCentralizedLogs"
+        repo_download_path += "/WAFCentralizedLogs"
         if ip_block:
-            path_to_download_in_repo += "/WAFCentralizedLogsIPBlock"
+            repo_download_path += "/WAFCentralizedLogsIPBlock"
         else:
-            path_to_download_in_repo += "/WAFCentralizedLogsNoIPBlock"
+            repo_download_path += "/WAFCentralizedLogsNoIPBlock"
     if waf_log_type == 5:
-        path_to_download_in_repo += "/WAFCloudWatchLogs"
+        repo_download_path += "/WAFCloudWatchLogs"
         if ip_block:
-            path_to_download_in_repo += "/WAFCloudWatchLogsIPBlock"
+            repo_download_path += "/WAFCloudWatchLogsIPBlock"
         else:
-            path_to_download_in_repo += "/WAFCloudWatchLogsIPBlock"
+            repo_download_path += "/WAFCloudWatchLogsIPBlock"
     if waf_log_type == 6:
-        path_to_download_in_repo += "/WAFNoLogs"
+        repo_download_path += "/WAFNoLogs"
         if ip_block:
-            path_to_download_in_repo += "/WAFNoLogsIPBlock"
+            repo_download_path += "/WAFNoLogsIPBlock"
         else:
-            path_to_download_in_repo += "/WAFNoLogsNoIPBlock"
+            repo_download_path += "/WAFNoLogsNoIPBlock"
 
-    return path_to_download_in_repo
+    return repo_download_path
+
